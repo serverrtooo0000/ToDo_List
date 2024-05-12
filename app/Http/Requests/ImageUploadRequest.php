@@ -3,10 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use app\Models\Task;
 
-
-class TaskRequest extends FormRequest
+class ImageUploadRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +22,10 @@ class TaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255',
-            'description' => 'required|nullable|string',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', //Проверка формата изоброжений
+            'image' => 'required|array|min:1|max:5', //кол-во
         ];
-
+        
     }
-
 }
