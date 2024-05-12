@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Task</title>
+    <title>Task Show</title>
 </head>
 <body>
     <h1>Task List</h1>
-    <form action="/todos/{{$task->id}}" method="POST">
-        @csrf
+    <ul>
         
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title" value="{{$task->title}}"><br>
-        <label for="description">Description:</label><br>
-        <textarea id="description" name="description">{{$task->description}}</textarea><br>
-        <button type="submit">Save</button>
-    </form>
+            
+            <li>{{ $task->description }}</li>
+            <img src="{{ Storage::url($task->image_path) }}" alt="Task Image">
+
+        
+    </ul>
 
        
 

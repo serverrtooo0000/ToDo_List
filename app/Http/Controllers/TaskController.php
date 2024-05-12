@@ -42,7 +42,7 @@ class TaskController extends Controller
     public function show($id)
     {
         $task = Task::findOrFail($id);
-        return view('tasks.show',['task' => $task]);
+        return view('show',['task' => $task]);
     }
 
     //Показать форму редактирования задачи

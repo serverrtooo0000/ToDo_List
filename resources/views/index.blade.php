@@ -22,7 +22,11 @@
     <ul>
         @foreach ($tasks as $task)
             <li>{{ $task->title }}</li>
+            <li><?='id = '?>{{ $task->id }}</li>
+            <img src="{{ Storage::url($task->image_path) }}" alt="Task Image">
         @endforeach
     </ul>
 
-    <a href="{{ route('tasks.create') }}">Create New Task
+
+
+    <a href="{{ route('tasks.show', [$task->id]) }}">Create New Task
