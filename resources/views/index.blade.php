@@ -25,7 +25,19 @@
             <li>{{ $task->title }}</li>
             <li><?='id = '?>{{ $task->id }}</li>
             <img src="{{ Storage::url($task->image_path) }}" alt="Task Image">
+
+             <form action="{{ route('tasks.destroy', [$task->id]) }}" method="POST">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+
+                    <button type="submit" id="delete-task-{{ $task->id }}" class="btn btn-danger">
+                        <i class="fa fa-btn fa-trash"></i>Delete
+                    </button>
+                </form>
+
         @endforeach
+
+        
     </ul>
 
 
