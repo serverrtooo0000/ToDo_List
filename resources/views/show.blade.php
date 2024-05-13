@@ -8,15 +8,9 @@
 <body>
     <h1>Task List</h1>
     <ul>
-        
-            
-            <li>{{ $task->description }}</li>
-            <img src="{{ Storage::url($task->image_path) }}" alt="Task Image">
-
-        
+        <li>{{ $task->description }}</li>
+        <img src="{{ Storage::url($task->image_path) }}" alt="Task Image">
     </ul>
 
-       
-
-</body>
+    </body>
 </html>

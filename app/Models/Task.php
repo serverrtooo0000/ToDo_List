@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    protected $fillable = [
+    public function getId()
+    {
+        return Task::find($this->id);
+    }
+
+    protected $fillable = 
+    [
         'title',
         'description',
         'image_path'
